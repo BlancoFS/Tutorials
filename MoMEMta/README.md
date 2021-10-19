@@ -118,7 +118,8 @@ This line is added to avoid an error with the c++11 version. Then:
 
 ```
 cd build
-cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ ..
+export LHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/
+cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DLHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ ..
 make 
 make install
 ```
