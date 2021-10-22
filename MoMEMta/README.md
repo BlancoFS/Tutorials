@@ -96,7 +96,7 @@ alias cmake= your desired version
 
 # MoMEMta
 
-We can start with the installation of MoMEMta.
+We can start the installation of MoMEMta.
 
 ```
 cd CMSSW_10_6_4/src
