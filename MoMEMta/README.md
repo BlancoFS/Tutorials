@@ -135,9 +135,49 @@ cp -r include/momemta ./src/
 ```
 
 
+# MoMEMta_MaGMEE
 
 
+Instructions to convert a MadGraph5 generated process to an accesible matrix element for MoMEMta. First, download MadGraph (version 2.5.* or 2.6.0, lower and upper versions are not supported):
 
+```
+wget https://launchpad.net/mg5amcnlo/2.0/2.5.x/+download/MG5_aMC_v2.5.5.tar.gz
+tar -xf MG5_aMC_v2.5.5.tar.gz
+```
+
+Now, download the MoMEMta_MaGMEE plugin and run:
+
+```
+cd MG5_aMC_v2_5_5/PLUGIN
+wget https://github.com/MoMEMta/MoMEMta-MaGMEE/archive/refs/tags/v1.0.0.tar.gz
+tar -xf v1.0.0.tar.gz
+mv MoMEMta-MaGMEE-1.0.0 MoMEMta-MaGMEE
+cd ..
+```
+
+## How to export a matrix element
+
+Lauch madgraph with the MoMEMta_MaGMEE plugin and get the matrix element for your desired process:
+
+```
+python2 ./bin/mg5_amc
+generate p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~)
+output MoMEMta ttbar_leptonic_ME
+
+
+A **ttbar_leptonic_ME** folder must be created in the MG5_aMC_v2_5_5 directory. Before running MoMEMta, the new matrix element has to be compiled:
+
+```
+cd ttbar_leptonic_ME
+mkdir build
+cd build
+cmake -DCMAKE_CXX_VERSION=c++17 -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
+make 
+```
+
+Important: The cmake install prefix should be the same as the MoMEMta installation folder.
+
+After that, a file called **libme_ttbar_leptonic_ME.so** has been created in the "ttbar_leptonic_ME/build" directory, this library is used as input by the lua configuration file.
 
 
 
