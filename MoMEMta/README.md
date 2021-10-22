@@ -25,7 +25,7 @@ conda create --name=ME
 conda activate ME
 ```
 
-Now, we are going to install the libraries in the conda enviroment's path (/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME_env/ in my case). It may be necessary to install a precise python 2 version in the conda enviroment, just do conda install python=2.7. 
+Now, we are going to install the libraries in the conda enviroment's path (/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME_env/ in my case) or in the CMSSW path, depending if the library is needed for building the MoMEMta software or it's a library used by MoMEMta, like LHAPDF. It may be necessary to install a precise python 2 version in the conda enviroment, just do conda install python=2.7. 
 
 ## Install LHAPDF
 
@@ -117,6 +117,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 This line is added to avoid an error with the c++11 version. Then:
 
 ```
+source /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0/etc/profile.d/init.sh
+
 cd build
 export LHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/
 cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ -DLHAPDF_ROOT=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
