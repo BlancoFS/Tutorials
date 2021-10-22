@@ -33,7 +33,7 @@ Now, we are going to install the libraries in the conda enviroment's path (/afs/
 wget https://lhapdf.hepforge.org/downloads/?f=LHAPDF-6.2.0.tar.gz -O LHAPDF-6.2.0.tar.gz
 tar -xf LHAPDF-6.2.0.tar.gz
 cd LHAPDF-6.2.0/
-./configure --prefix=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME_env/
+./configure --prefix=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/
 make
 make install
 ```
@@ -119,12 +119,19 @@ This line is added to avoid an error with the c++11 version. Then:
 ```
 cd build
 export LHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/
-cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DLHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ ..
+cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ -DLHAPDF_ROOT=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
 make 
 make install
 ```
 
-That's it. It should be install correctly at /afs/cern.ch/user/s/sblancof/miniconda3/envs/ME.
+That's it. It should be install correctly at /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/. Finally, to make the MoMEMta libraries accesible:
+
+
+```
+cd /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/
+cp -r include/momemta ./src/
+```
+
 
 
 
