@@ -163,7 +163,7 @@ Lauch madgraph with the MoMEMta_MaGMEE plugin and get the matrix element for you
 python2 ./bin/mg5_amc
 generate p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~)
 output MoMEMta ttbar_leptonic_ME
-
+```
 
 A **ttbar_leptonic_ME** folder must be created in the MG5_aMC_v2_5_5 directory. Before running MoMEMta, the new matrix element has to be compiled:
 
