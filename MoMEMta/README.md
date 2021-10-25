@@ -180,6 +180,6 @@ Important: The cmake install prefix should be the same as the MoMEMta installati
 After that, a file called **libme_ttbar_leptonic_ME.so** has been created in the "ttbar_leptonic_ME/build" directory, this library is used as input by the lua configuration file.
 
 
-
+**Once the new *.lua and c++ files are generated, they must be included in the MoMEMta/MatrixElement folder and the MoMEMta framework has to be recompiled again.**
 
 
