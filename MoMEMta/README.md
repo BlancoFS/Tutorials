@@ -132,6 +132,7 @@ That's it. It should be install correctly at /afs/cern.ch/work/s/sblancof/public
 ```
 cd /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/
 cp -r include/momemta ./src/
+scram b -j 8
 ```
 
 
