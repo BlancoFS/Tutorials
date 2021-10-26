@@ -99,7 +99,7 @@ alias cmake= your desired version
 We can start the installation of MoMEMta.
 
 ```
-cd CMSSW_10_6_4/src
+cd CMSSW_10_6_10/src
 cmsenv
 
 git clone https://github.com/MoMEMta/MoMEMta.git
@@ -117,11 +117,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 This line is added to avoid an error with the c++11 version. Then:
 
 ```
-source /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0/etc/profile.d/init.sh
+source /cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/gcc/8.2.0/etc/profile.d/init.sh
 
 cd build
-export LHAPDF_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/
-cmake -DCMAKE_CXX_VERSION=c++17 -BOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ -DLHAPDF_ROOT=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
+cmake -DCMAKE_CXX_VERSION=c++17 -DBOOST_ROOT=/afs/cern.ch/user/s/sblancof/miniconda3/envs/ME/ -DTESTS=OFF -DEXAMPLES=OFF -DPYTHON_BINDINGS=ON -DPROFILING=ON -B ./ -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ -DLHAPDF_ROOT=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
 make 
 make install
 ```
@@ -180,6 +179,8 @@ Important: The cmake install prefix should be the same as the MoMEMta installati
 
 After that, a file called **libme_ttbar_leptonic_ME.so** has been created in the "ttbar_leptonic_ME/build" directory, this library is used as input by the lua configuration file.
 
+
+# Important: Each time you add a new matrix element
 
 **Once the new .lua and c++ files are generated, they must be included in the MoMEMta/MatrixElement folder and the MoMEMta framework has to be recompiled again.**
 
