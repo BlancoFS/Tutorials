@@ -66,8 +66,8 @@ cd boost_1_56_0/
 ## Alternative (check if works)
 
 ```
-source /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.2.1/etc/profile.d/init.sh
-source /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/boost/1.63.0/etc/profile.d/init.sh
+source /cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/lhapdf/6.2.1/etc/profile.d/init.sh
+source /cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/boost/1.63.0/etc/profile.d/init.sh
 ```
 
 At this point, the libraries should be availible. However, first, check that your cmake version is higher than 3.2 by:
@@ -114,7 +114,7 @@ Now, open the **CMakeLists.txt** file and add this command in the **line 64**:
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 ```
 
-This line is added to avoid an error with the c++11 version. Then:
+This line is added to avoid an error in the c++11 version. Then:
 
 ```
 source /cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/gcc/8.2.0/etc/profile.d/init.sh
