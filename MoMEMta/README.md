@@ -165,23 +165,17 @@ generate p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~)
 output MoMEMta ttbar_leptonic_ME
 ```
 
-A **ttbar_leptonic_ME** folder must be created in the MG5_aMC_v2_5_5 directory. Before running MoMEMta, the new matrix element has to be compiled:
+A **ttbar_leptonic_ME** folder must be created in the MG5_aMC_v2_5_5 directory. Before running MoMEMta, the new matrix element has to be compiled. To do that, the folder must be moved to the intall prefix of MoMEMta:
 
 ```
-cd ttbar_leptonic_ME
-mkdir build
-cd build
-cmake -DCMAKE_CXX_VERSION=c++17 -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
-make 
+mv ttbar_leptonic_ME /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/
+mkdir ttbar_leptonic_ME/build
+cmake3 -S ttbar_leptonic_ME -B ttbar_leptonic_ME/build -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
+cmake3 --build ttbar_leptonic_ME/build --clean-first --parallel 4
 ```
 
-Important: The cmake install prefix should be the same as the MoMEMta installation folder.
+Important: **The cmake install prefix should be the same as the MoMEMta installation folder**.
 
 After that, a file called **libme_ttbar_leptonic_ME.so** has been created in the "ttbar_leptonic_ME/build" directory, this library is used as input by the lua configuration file.
-
-
-# Important: Each time you add a new matrix element
-
-**Once the new .lua and c++ files are generated, they must be included in the MoMEMta/MatrixElement folder and the MoMEMta framework has to be recompiled again.**
 
 
