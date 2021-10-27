@@ -134,6 +134,36 @@ cp -r include/momemta ./src/
 scram b -j 8
 ```
 
+Once MoMEMta is installed correctly, you should see this message everytime you recompile the CMSSW_10_6_10 enviroment:
+
+```
+Finding a value for MOMEMTA_BASE:
+
+	Checks [OK] for /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10
+
+Finding a value for LIBDIR:
+
+	Checks [OK] for /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/lib
+
+Finding a value for INCLUDE:
+
+	Checks [OK] for /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/include
+
+
+* Library check [OK] for libmomemta     
+
+
+-------------------------------
+
+Runtime path settings for ROOT_INCLUDE_PATH:
+
+	Checks [OK] for /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/include
+
+
+**Setting up momemta version 0.2.0**
+```
+
+
 
 # MoMEMta_MaGMEE
 
