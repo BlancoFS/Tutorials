@@ -134,7 +134,7 @@ cp -r include/momemta ./src/
 scram b -j 8
 ```
 
-Once MoMEMta is installed correctly, you should see this message everytime you recompile the CMSSW_10_6_10 enviroment:
+Once MoMEMta is installed correctly, you should see this message during the compilation:
 
 ```
 Finding a value for MOMEMTA_BASE:
