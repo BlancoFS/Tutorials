@@ -200,7 +200,7 @@ A **ttbar_leptonic_ME** folder must be created in the MG5_aMC_v2_5_5 directory. 
 ```
 mv ttbar_leptonic_ME /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/
 mkdir ttbar_leptonic_ME/build
-cmake3 -S ttbar_leptonic_ME -B ttbar_leptonic_ME/build -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ ..
+cmake3 -S ttbar_leptonic_ME -B ttbar_leptonic_ME/build -DCMAKE_INSTALL_PREFIX=/afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/ 
 cmake3 --build ttbar_leptonic_ME/build --clean-first --parallel 4
 ```
 
