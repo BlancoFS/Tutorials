@@ -101,7 +101,7 @@ cmsRun /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/CMSSW_10_2_22/src/
 Finally, we obtain the nanoAOD file from MiniAOD by:
 
 ```
-cmsDriver.py step3 -s NANO --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --filein file:HToW0W0To2l2v_step3.root --fileout file:HToW0W0To2l2v_nanoAOD.root --conditions auto:phase1_2018_realistic --step NANO --nThreads 2 --era Run2_2018,,run2_nanoAOD_102Xv1 --python_filename /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/CMSSW_10_2_22/src/Fastsim/RunIIAutumn18NanoAOD-04075_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 500
+cmsDriver.py step3 -s NANO --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --filein file:HToW0W0To2l2v_step3.root --fileout file:HToW0W0To2l2v_nanoAOD.root --conditions auto:phase1_2018_realistic --step NANO --nThreads 2 --era Run2_2018,run2_nanoAOD_102Xv1 --python_filename /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/CMSSW_10_2_22/src/Fastsim/RunIIAutumn18NanoAOD-04075_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 500
 ```
 
 And it runs as:
