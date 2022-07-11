@@ -109,3 +109,21 @@ And it runs as:
 ```
 cmsRun /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/CMSSW_10_2_22/src/Fastsim/RunIIAutumn18NanoAOD-04075_1_cfg.py
 ```
+
+
+# Latinos Postprocessing
+
+Now, we have nanoAODv7 files but postprocessing is still needed to have our own ntuples. The following steps are run (using the v7.prod tag of the LatinosAnalysis framework) removing the steps involving FatJets (That were not running properly because of code issues within the different versions of LatinosAnalysis and NanoAODTools, but we don't need them).
+
+First, modify Sites_cfg.py and Steps_cfg.py to do the postprocessing in your own eos workspace and run the desired modules. We assume the samples are placed in a folder named "base" and are included in the dictionary of samples. Then, interactive it's:
+
+
+```
+mkPostProc.py -s MCl1loose2018v7 -p Autumn18_102X_nAODv7_Full2018v7 -i base
+```
+
+
+
+
+
+
