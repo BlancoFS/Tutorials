@@ -125,7 +125,18 @@ make
 make install
 ```
 
-That's it. It should be install correctly at /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/. Finally, to make the MoMEMta libraries accesible:
+
+That's it. It should be install correctly at /afs/cern.ch/work/s/sblancof/public/CMSSW_10_6_10/. 
+
+**Warning**
+
+The LHAPDF library should be the one installed locally (Inside the CMSSW_10_6_10 directory), if not it will not compile later. So, it can occur that cmake just find the release version and it does not recognize the one there. If it's the case, modify the CMakelists.txt to include the line:
+
+```
+SET(LHAPDF_ROOT /afs/cern.ch/work/s/sblancof/private/CMSSW_10_6_10/)
+```
+
+Finally, to make the MoMEMta libraries accesible:
 
 
 ```
