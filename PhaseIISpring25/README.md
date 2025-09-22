@@ -24,10 +24,22 @@ scram b -j 15
 
 One can modify some lines on the genFragment to supress the Z decay to electron and tau leptons and effectively get a ZMM sample ([link](https://github.com/cms-sw/cmssw/blob/master/Configuration/Generator/python/ZMM_14TeV_TuneCP5_cfi.py)).
 
+To get DYTo2L or ZMM:
+
 ```
 curl -s -k https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Phase2Spring24GS-00186 --retry 3 --create-dirs -o Configuration/GenProduction/python/TSG-Phase2Spring24GS-00186-fragment.py
 scram b -j 1
+```
 
+To get QCD samples:
+
+```
+curl -s -k https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Phase2Spring24GS-00018 --retry 3 --create-dirs -o Configuration/GenProduction/python/TSG-Phase2Spring24GS-00018-fragment.py
+```
+
+Please modify the inital selection as desired. Now, get configuration for CMSSW:
+
+```
 cmsDriver.py Configuration/GenProduction/python/TSG-Phase2Spring24GS-00186-fragment.py --era Phase2C17I13M9 --customise Configuration/DataProcessing/Utils.addMonitoring --beamspot HLLHC14TeV --step GEN,SIM --geometry ExtendedRun4D110 --conditions auto:phase2_realistic_T33 --datatier GEN-SIM --eventcontent FEVTDEBUG --python_filename TSG-Phase2Spring25GS_cfg.py --fileout file:TSG-Phase2Spring25GS.root --number 100000 --number_out 100000 --no_exec --mc
 ```
 
