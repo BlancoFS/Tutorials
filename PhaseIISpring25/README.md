@@ -22,7 +22,7 @@ scram b -j 15
 
 ## GEN-SIM step
 
-One can comment some lines on the genFragment to supress the Z decay to electron and tau leptons and effectively get a ZMM sample.
+One can modify some lines on the genFragment to supress the Z decay to electron and tau leptons and effectively get a ZMM sample ([link](https://github.com/cms-sw/cmssw/blob/master/Configuration/Generator/python/ZMM_14TeV_TuneCP5_cfi.py)).
 
 ```
 curl -s -k https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Phase2Spring24GS-00186 --retry 3 --create-dirs -o Configuration/GenProduction/python/TSG-Phase2Spring24GS-00186-fragment.py
